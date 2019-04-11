@@ -1,0 +1,24 @@
+{
+    "logs": {
+        "logs_collected": {
+          "files": {
+            "collect_list": [
+              {
+                "file_path": "/opt/aws/amazon-cloudwatch-agent/logs/amazon-cloudwatch-agent.log",
+                "log_group_name": "amazon-cloudwatch-agent.log",
+                "log_stream_name": "amazon-cloudwatch-agent.log",
+                "timezone": "UTC"
+              },
+              {
+                "file_path": "/var/log/httpd/access_log",
+                "log_group_name": "httpd-access-within-container.log",
+                "log_stream_name": "httpd-access-within-container.log",
+                "timezone": "Local"
+              }
+            ]
+          }
+        },
+        "log_stream_name": "cloudwatch_agent_log_stream_within_container",
+        "force_flush_interval" : 15
+    }
+}

@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: centos-httpd-cloudwatch
+  labels:
+    app: centos-httpd-cloudwatch
+spec:
+  containers:
+  - name: centos-httpd-cloudwatch
+    image: starchx/centos-httpd-cloudwatch
+    securityContext:
+      privileged: true
+    volumeMounts:
+    - mountPath: /sys/fs/cgroup
+      name: sys-fs-cgroup-volume
+  volumes:
+  - name: sys-fs-cgroup-volume
+    hostPath:
+      path: /sys/fs/cgroup
+      type: Directory
